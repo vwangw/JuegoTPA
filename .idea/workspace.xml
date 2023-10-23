@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46d424aa-a60b-4bac-ad19-4da7ef900e22" name="Changes" comment="Bloque con movimiento">
+    <list default="true" id="46d424aa-a60b-4bac-ad19-4da7ef900e22" name="Changes" comment="proyecto">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/player_sprites.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/GamePanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utilz/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MouseInputs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MouseInputs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/juego.iml" beforeDir="false" afterPath="$PROJECT_DIR$/juego.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GamePanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GameWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/KeyboardInputs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inputs/KeyboardInputs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MouseInputs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inputs/MouseInputs.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,18 +63,27 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "openjdk-20",
+    "last_opened_file_path": "C:/Users/Vicente/Documents/GitHub/JuegoTPA/res",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Vicente\Documents\GitHub\JuegoTPA\res" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Vicente\IdeaProjects\juego\src" />
       <recent name="C:\Users\Vicente\IdeaProjects\juego" />
@@ -74,7 +91,7 @@
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="juego" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -111,7 +128,12 @@
       <workItem from="1697472042894" duration="41000" />
       <workItem from="1697569675723" duration="711000" />
       <workItem from="1697625600413" duration="69000" />
-      <workItem from="1697625728332" duration="2667000" />
+      <workItem from="1697625728332" duration="4715000" />
+      <workItem from="1697712082954" duration="105000" />
+      <workItem from="1697982413535" duration="277000" />
+      <workItem from="1698064577272" duration="671000" />
+      <workItem from="1698068121584" duration="4708000" />
+      <workItem from="1698078371637" duration="2920000" />
     </task>
     <task id="LOCAL-00001" summary="hola">
       <option name="closed" value="true" />
@@ -129,7 +151,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696947291941</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="proyecto">
+      <option name="closed" value="true" />
+      <created>1697653363958</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1697653363958</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,6 +179,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="hola" />
     <MESSAGE value="Bloque con movimiento" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bloque con movimiento" />
+    <MESSAGE value="proyecto" />
+    <option name="LAST_COMMIT_MESSAGE" value="proyecto" />
   </component>
 </project>
