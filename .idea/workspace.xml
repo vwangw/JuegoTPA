@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46d424aa-a60b-4bac-ad19-4da7ef900e22" name="Changes" comment="movimiento y animacion">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="46d424aa-a60b-4bac-ad19-4da7ef900e22" name="Changes" comment="delete all files" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +19,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -135,6 +138,7 @@
       <workItem from="1698668504234" duration="4000" />
       <workItem from="1698756872093" duration="2153000" />
       <workItem from="1698770023331" duration="2336000" />
+      <workItem from="1698772413543" duration="803000" />
     </task>
     <task id="LOCAL-00001" summary="hola">
       <option name="closed" value="true" />
@@ -184,7 +188,23 @@
       <option name="project" value="LOCAL" />
       <updated>1698771694307</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="movimiento y animacion">
+      <option name="closed" value="true" />
+      <created>1698772425829</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1698772425829</updated>
+    </task>
+    <task id="LOCAL-00008" summary="delete all files">
+      <option name="closed" value="true" />
+      <created>1698772521841</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1698772521841</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,7 +215,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -206,7 +238,8 @@
     <MESSAGE value="Bloque con movimiento" />
     <MESSAGE value="proyecto" />
     <MESSAGE value="movimiento y animacion" />
-    <option name="LAST_COMMIT_MESSAGE" value="movimiento y animacion" />
+    <MESSAGE value="delete all files" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete all files" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
