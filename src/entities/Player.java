@@ -2,11 +2,8 @@ package entities;
 
 import utilz.LoadSave;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.io.InputStream;
 
 import static utilz.Constants.PlayerConstants.*;
 
@@ -18,8 +15,8 @@ public class Player extends Entity{
     private float playerSpeed=2.0f;
 
     private BufferedImage[][] animations;
-    public Player(float x,float y){
-        super(x,y);
+    public Player(float x,float y, int width, int height){
+        super(x,y,width,height);
         loadAnimations();
     }
 
@@ -32,7 +29,7 @@ public class Player extends Entity{
 
     public void render(Graphics g){
 
-        g.drawImage(animations[playerAction][aniIndex],(int)x,(int)y,256,160,null);
+        g.drawImage(animations[playerAction][aniIndex],(int)x,(int)y,width,height,null);
     }
 
     public void updateAnimationTick(){
