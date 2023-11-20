@@ -7,7 +7,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 import static utilz.Constants.PlayerConstants.*;
-import static utilz.HelpMethods.canMoveHere;
+import static utilz.HelpMethods.*;
 
 public class Player extends Entity{
     private int aniTick, aniIndex, aniSpeed=15;
@@ -18,6 +18,13 @@ public class Player extends Entity{
     private int[][] lvlData;
     private float xDrawOffset=21* Game.SCALE;
     private float yDrawOffset=4* Game.SCALE;
+
+    // Jumping/Gravity
+    private float airSpeed=0f;
+    private float gravity=0.04f*Game.SCALE;
+    private float jumpSpeed= -2.25f * Game.SCALE;
+    private float fallSpeedAfterCollision=0.5f*Game.SCALE;
+    private boolean inAir=false;
 
     private BufferedImage[][] animations;
     public Player(float x,float y, int width, int height){
@@ -79,29 +86,38 @@ public class Player extends Entity{
     public void updatePos(){
 
         moving=false;
-        if(!left && !right && !up && !down){
+        if(!left && !right && !inAir){
             return;
         }
 
         float xSpeed=0, ySpeed=0;
 
-        if(left && !right){
-            xSpeed = -playerSpeed;
+        if(left){
+            xSpeed -= playerSpeed;
         }
-        else if (right && !left){
-            xSpeed = playerSpeed;
+        if (right){
+            xSpeed += playerSpeed;
         }
 
-        if(up && !down){
-            ySpeed = -playerSpeed;
+        if(inAir){
+
+        }else {
+            updateXPos(xSpeed);
         }
-        else if (down && !up){
-            ySpeed = playerSpeed;
-        }
-        if(canMoveHere(hitbox.x+xSpeed,hitbox.y+ySpeed,hitbox.width,hitbox.height,lvlData)){
+
+        /*if(canMoveHere(hitbox.x+xSpeed,hitbox.y+ySpeed,hitbox.width,hitbox.height,lvlData)){
             hitbox.x+=xSpeed;
             hitbox.y+=ySpeed;
             moving=true;
+        }*/
+    }
+
+    private void updateXPos(float xSpeed){
+        if(canMoveHere(hitbox.x+xSpeed,hitbox.y,hitbox.width,hitbox.height,lvlData)){
+            hitbox.x+=xSpeed;
+        }
+        else{
+            hitbox.x = getEntityXPosNextToWall(hitbox, xSpeed);
         }
     }
 
