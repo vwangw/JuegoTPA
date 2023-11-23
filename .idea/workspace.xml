@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46d424aa-a60b-4bac-ad19-4da7ef900e22" name="Changes" comment="interfaz">
+    <list default="true" id="46d424aa-a60b-4bac-ad19-4da7ef900e22" name="Changes" comment="pantalla de pausa">
+      <change afterPath="$PROJECT_DIR$/src/ui/PauseButton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/SoundButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gamestates/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamestates/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gamestates/Playing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamestates/Playing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/PauseOverlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/PauseOverlay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilz/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilz/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilz/LoadSave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilz/LoadSave.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +152,7 @@
       <workItem from="1700491074083" duration="8459000" />
       <workItem from="1700502060369" duration="6689000" />
       <workItem from="1700679435948" duration="7000" />
-      <workItem from="1700760703414" duration="7038000" />
+      <workItem from="1700760703414" duration="10506000" />
     </task>
     <task id="LOCAL-00001" summary="hola">
       <option name="closed" value="true" />
@@ -270,7 +274,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700767188086</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="pantalla de pausa">
+      <option name="closed" value="true" />
+      <created>1700768492833</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1700768492833</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,7 +319,8 @@
     <MESSAGE value="creacion de niveles" />
     <MESSAGE value="colision" />
     <MESSAGE value="interfaz" />
-    <option name="LAST_COMMIT_MESSAGE" value="interfaz" />
+    <MESSAGE value="pantalla de pausa" />
+    <option name="LAST_COMMIT_MESSAGE" value="pantalla de pausa" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
