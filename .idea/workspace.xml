@@ -4,23 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46d424aa-a60b-4bac-ad19-4da7ef900e22" name="Changes" comment="colision">
-      <change afterPath="$PROJECT_DIR$/res/button_atlas.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/menu_background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gamestates/Gamestate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gamestates/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gamestates/Playing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gamestates/State.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gamestates/Statemethods.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/MenuButton.java" afterDir="false" />
+    <list default="true" id="46d424aa-a60b-4bac-ad19-4da7ef900e22" name="Changes" comment="interfaz">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inputs/KeyboardInputs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inputs/KeyboardInputs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inputs/MouseInputs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inputs/MouseInputs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilz/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilz/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilz/HelpMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilz/HelpMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilz/LoadSave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilz/LoadSave.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gamestates/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamestates/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +148,7 @@
       <workItem from="1700491074083" duration="8459000" />
       <workItem from="1700502060369" duration="6689000" />
       <workItem from="1700679435948" duration="7000" />
-      <workItem from="1700760703414" duration="6313000" />
+      <workItem from="1700760703414" duration="7038000" />
     </task>
     <task id="LOCAL-00001" summary="hola">
       <option name="closed" value="true" />
@@ -275,7 +262,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700505919412</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="interfaz">
+      <option name="closed" value="true" />
+      <created>1700767188085</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1700767188086</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -311,7 +306,8 @@
     <MESSAGE value="movimiento y animacion" />
     <MESSAGE value="creacion de niveles" />
     <MESSAGE value="colision" />
-    <option name="LAST_COMMIT_MESSAGE" value="colision" />
+    <MESSAGE value="interfaz" />
+    <option name="LAST_COMMIT_MESSAGE" value="interfaz" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
