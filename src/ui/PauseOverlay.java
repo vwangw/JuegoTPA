@@ -9,18 +9,30 @@ import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 
 import static utilz.Constants.UI.PauseButton.*;
+import static utilz.Constants.UI.UrmButtons.*;
 
 public class PauseOverlay {
 
     private BufferedImage backgroundImg;
     private int bgX, bgY, bgW, bgH;
     private SoundButton musicButton, sfxButton;
+    private UrmButton menuB, replayB, unpausedB;
 
     public PauseOverlay(){
-
         loadBackground();
         createSoundButton();
+        createUrmButtons();
+    }
 
+    private void createUrmButtons(){
+        int menuX = (int)(313 * Game.SCALE);
+        int replayX = (int)(387 * Game.SCALE);
+        int unpausedX = (int)(462 * Game.SCALE);
+        int bY = (int)(325 * Game.SCALE);
+
+        menuB = new UrmButton(menuX, bY, URM_SIZE, URM_SIZE, 2);
+        replayB = new UrmButton(replayX, bY, URM_SIZE, URM_SIZE, 1);
+        unpausedB = new UrmButton(unpausedX, bY, URM_SIZE, URM_SIZE, 0);
     }
 
     private void createSoundButton(){
@@ -42,6 +54,10 @@ public class PauseOverlay {
     public void update(){
         musicButton.update();
         sfxButton.update();
+
+        menuB.update();
+        replayB.update();
+        unpausedB.update();
     }
 
     public void draw(Graphics g){
@@ -51,6 +67,11 @@ public class PauseOverlay {
         //Sound Buttons
         musicButton.draw(g);
         sfxButton.draw(g);
+
+        //Urm Buttons
+        menuB.draw(g);
+        replayB.draw(g);
+        unpausedB.draw(g);
     }
 
     public void mouseDragged(MouseEvent e){
