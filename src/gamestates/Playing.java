@@ -11,6 +11,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 
+import static utilz.Constants.Environment.*;
+
 public class Playing extends State implements Statemethods{
     private Player player;
     private LevelManager levelManager;
@@ -24,13 +26,14 @@ public class Playing extends State implements Statemethods{
     private int maxTilesOffset = lvlTilesWide - Game.TILES_IN_WIDTH;
     private int maxLvlOffsetX = maxTilesOffset * Game.TILES_SIZE;
 
-    private BufferedImage backgroundImg;
+    private BufferedImage backgroundImg, bigClouds;
 
     public Playing(Game game){
         super(game);
         initClasses();
 
         backgroundImg = LoadSave.getSpriteAtlas(LoadSave.PLAYING_BG_IMG);
+        bigClouds = LoadSave.getSpriteAtlas(LoadSave.BIG_CLOUDS);
     }
 
     public void initClasses(){
@@ -81,6 +84,7 @@ public class Playing extends State implements Statemethods{
     public void draw(Graphics g) {
 
         g.drawImage(backgroundImg, 0, 0, Game.GAME_WIDTH, Game.GAME_HEIGHT, null);
+        drawClouds(g);
 
         levelManager.draw(g, xLvlOffset);
         player.render(g, xLvlOffset);
@@ -90,6 +94,14 @@ public class Playing extends State implements Statemethods{
             g.fillRect(0,0,Game.GAME_WIDTH, Game.GAME_HEIGHT);
             pauseOverlay.draw(g);
         }
+    }
+
+    private void drawClouds(Graphics g){
+
+        for(int i = 0; i < 3; i++){
+            g.drawImage(bigClouds, 0 + i * BIG_CLOUDS_WIDTH, (int)(204 * Game.SCALE), BIG_CLOUDS_WIDTH, BIG_CLOUDS_HEIGHT, null);
+        }
+
     }
 
     @Override
