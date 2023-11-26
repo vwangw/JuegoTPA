@@ -10,6 +10,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
+import java.util.Random;
 
 import static utilz.Constants.Environment.*;
 
@@ -26,7 +27,9 @@ public class Playing extends State implements Statemethods{
     private int maxTilesOffset = lvlTilesWide - Game.TILES_IN_WIDTH;
     private int maxLvlOffsetX = maxTilesOffset * Game.TILES_SIZE;
 
-    private BufferedImage backgroundImg, bigClouds;
+    private BufferedImage backgroundImg, bigClouds, smallClouds;
+    private int[] smallCloudsPos;
+    private Random rnd = new Random();
 
     public Playing(Game game){
         super(game);
@@ -34,6 +37,11 @@ public class Playing extends State implements Statemethods{
 
         backgroundImg = LoadSave.getSpriteAtlas(LoadSave.PLAYING_BG_IMG);
         bigClouds = LoadSave.getSpriteAtlas(LoadSave.BIG_CLOUDS);
+        smallClouds = LoadSave.getSpriteAtlas(LoadSave.SMALL_CLOUDS);
+        smallCloudsPos = new int[8];
+        for(int i= 0; i < smallCloudsPos.length; i++){
+            smallCloudsPos[i] = (int)(90 * Game.SCALE) + rnd.nextInt((int)(100 * Game.SCALE));
+        }
     }
 
     public void initClasses(){
@@ -99,9 +107,12 @@ public class Playing extends State implements Statemethods{
     private void drawClouds(Graphics g){
 
         for(int i = 0; i < 3; i++){
-            g.drawImage(bigClouds, 0 + i * BIG_CLOUDS_WIDTH, (int)(204 * Game.SCALE), BIG_CLOUDS_WIDTH, BIG_CLOUDS_HEIGHT, null);
+            g.drawImage(bigClouds, i * BIG_CLOUDS_WIDTH, (int)(204 * Game.SCALE), BIG_CLOUDS_WIDTH, BIG_CLOUDS_HEIGHT, null);
         }
 
+        for(int i = 0; i < smallCloudsPos.length; i++){
+            g.drawImage(smallClouds, SMALL_CLOUDS_WIDTH * 4 * i, smallCloudsPos[i], SMALL_CLOUDS_WIDTH, SMALL_CLOUDS_HEIGHT, null);
+        }
     }
 
     @Override

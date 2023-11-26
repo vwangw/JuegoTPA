@@ -10,6 +10,12 @@ public class Constants {
 
         public static final int BIG_CLOUDS_WIDTH = (int)(BIG_CLOUDS_WIDTH_DEFAULT * Game.SCALE);
         public static final int BIG_CLOUDS_HEIGHT = (int)(BIG_CLOUDS_HEIGHT_DEFAULT * Game.SCALE);
+
+        public static final int SMALL_CLOUDS_WIDTH_DEFAULT = 74;
+        public static final int SMALL_CLOUDS_HEIGHT_DEFAULT = 24;
+
+        public static final int SMALL_CLOUDS_WIDTH = (int)(SMALL_CLOUDS_WIDTH_DEFAULT * Game.SCALE);
+        public static final int SMALL_CLOUDS_HEIGHT = (int)(SMALL_CLOUDS_HEIGHT_DEFAULT * Game.SCALE);
     }
 
     public static class UI{
