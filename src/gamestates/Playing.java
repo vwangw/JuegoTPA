@@ -223,7 +223,7 @@ public class Playing extends State implements Statemethods{
             }
     }
 
-    public void unpauseGasme(){
+    public void unpauseGame(){
         paused = false;
     }
 }
