@@ -60,10 +60,6 @@ public class Playing extends State implements Statemethods{
         gameOverOverlay = new GameOverOverlay(this);
     }
 
-    public void windowFocusLost(){
-        player.resetDirBooleans();
-    }
-
     public Player getPlayer(){
         return player;
     }
