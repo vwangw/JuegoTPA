@@ -2,6 +2,8 @@ package entities;
 
 import main.Game;
 
+import java.sql.DataTruncation;
+
 import static utilz.Constants.EnemyConstants.*;
 import static utilz.HelpMethods.*;
 import static utilz.Constants.Directions.*;
@@ -15,6 +17,8 @@ public abstract class Enemy extends Entity{
     protected float gravity = 0.04f * Game.SCALE;
     protected float walkspeed = 0.35f * Game.SCALE;
     protected int walkDir = LEFT;
+    protected int tileY;
+    protected float attackDistance = Game.TILES_SIZE;
 
     public Enemy(float x, float y, int width, int height, int enemyType) {
         super(x, y, width, height);
@@ -38,6 +42,7 @@ public abstract class Enemy extends Entity{
         }else{
             inAir = false;
             hitbox.y = getEntityYPosUnderRoofOrAboveFloor(hitbox, fallSpeed);
+            tileY = (int)(hitbox.y / Game.TILES_SIZE);
         }
     }
 
@@ -117,6 +122,23 @@ public abstract class Enemy extends Entity{
                     break;
             }
         }
+    }
+
+    protected boolean canSeePlayer(int[][] lvlData, Player player){
+        int playerTileY = (int)(player.getHitbox().y / Game.TILES_SIZE);
+        if(playerTileY == tileY){
+            if(isPlayerOnRange(player)){
+                if(isSightClear(lvlData, hitbox, player.hitbox, tileY)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    private boolean isPlayerOnRange(Player player){
+        int absValue = (int)Math.abs(player.hitbox.x - hitbox.x);
+        return absValue <= attackDistance * 5;
     }
 
     protected void newState(int enemyState){
