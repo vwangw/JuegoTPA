@@ -1,5 +1,6 @@
 package gamestates;
 
+import entities.EnemyManager;
 import entities.Player;
 import levels.LevelManager;
 import main.Game;
@@ -17,6 +18,7 @@ import static utilz.Constants.Environment.*;
 public class Playing extends State implements Statemethods{
     private Player player;
     private LevelManager levelManager;
+    private EnemyManager enemyManager;
     private PauseOverlay pauseOverlay;
     private boolean paused = false;
 
@@ -46,6 +48,7 @@ public class Playing extends State implements Statemethods{
 
     public void initClasses(){
         levelManager= new LevelManager(game);
+        enemyManager = new EnemyManager(this);
         player=new Player(200,200,(int)(64*Game.SCALE), (int)(40*Game.SCALE));
         player.loadLvlData(levelManager.getCurrentLevel().getLevelData());
         pauseOverlay = new PauseOverlay(this);
@@ -64,6 +67,7 @@ public class Playing extends State implements Statemethods{
         if(!paused){
             levelManager.update();
             player.update();
+            enemyManager.update();
             checkClosedToBorder();
         }else{
             pauseOverlay.update();
@@ -96,6 +100,7 @@ public class Playing extends State implements Statemethods{
 
         levelManager.draw(g, xLvlOffset);
         player.render(g, xLvlOffset);
+        enemyManager.draw(g, xLvlOffset);
 
         if(paused){
             g.setColor(new Color(0,0,0,150));
@@ -107,11 +112,11 @@ public class Playing extends State implements Statemethods{
     private void drawClouds(Graphics g){
 
         for(int i = 0; i < 3; i++){
-            g.drawImage(bigClouds, i * BIG_CLOUDS_WIDTH, (int)(204 * Game.SCALE), BIG_CLOUDS_WIDTH, BIG_CLOUDS_HEIGHT, null);
+            g.drawImage(bigClouds, i * BIG_CLOUDS_WIDTH - (int)(xLvlOffset * 0.3), (int)(204 * Game.SCALE), BIG_CLOUDS_WIDTH, BIG_CLOUDS_HEIGHT, null);
         }
 
         for(int i = 0; i < smallCloudsPos.length; i++){
-            g.drawImage(smallClouds, SMALL_CLOUDS_WIDTH * 4 * i, smallCloudsPos[i], SMALL_CLOUDS_WIDTH, SMALL_CLOUDS_HEIGHT, null);
+            g.drawImage(smallClouds, SMALL_CLOUDS_WIDTH * 4 * i - (int)(xLvlOffset * 0.7), smallCloudsPos[i], SMALL_CLOUDS_WIDTH, SMALL_CLOUDS_HEIGHT, null);
         }
     }
 
