@@ -25,7 +25,7 @@ public class LevelManager {
         this.game=game;
         importOutsideSprites();
         levels = new ArrayList<>();
-        buildAlllLevels();
+        buildAllLevels();
     }
 
     public void loadNextLevel(){
@@ -42,7 +42,7 @@ public class LevelManager {
         game.getPlaying().setMaxLvlOffsetX(newLevel.getLvlOffset());
     }
 
-    private void buildAlllLevels(){
+    private void buildAllLevels(){
         BufferedImage[] allLevels = LoadSave.getAllLevels();
         for(BufferedImage img : allLevels){
             levels.add(new Level(img));
