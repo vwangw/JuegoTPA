@@ -44,6 +44,10 @@ public class Playing extends State implements Statemethods{
     private boolean gameOver;
     private boolean lvlCompleted;
 
+    /**
+     * constructor de cuando el juego está en modo de estar jugando
+     * @param game
+     */
     public Playing(Game game){
         super(game);
         initClasses();
@@ -60,16 +64,25 @@ public class Playing extends State implements Statemethods{
         loadStartLevel();
     }
 
+    /**
+     * cargar el siguiente nivel
+     */
     public void loadNextLevel(){
         resetAll();
         levelManager.loadNextLevel();
         player.setSpawn(levelManager.getCurrentLevel().getPlayerSpawn());
     }
 
+    /**
+     * cargar el nivel del principio
+     */
     private void loadStartLevel(){
         enemyManager.loadEnemies(levelManager.getCurrentLevel());
     }
 
+    /**
+     * calcula
+     */
     private void calcLvlOffset(){
         maxLvlOffsetX = levelManager.getCurrentLevel().getLvlOffset();
     }

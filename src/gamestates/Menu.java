@@ -50,6 +50,9 @@ public class Menu extends State implements Statemethods{
         menuY = (int)(45 * Game.SCALE);
     }
 
+    /**
+     * actualiza el botón de ir al menú
+     */
     @Override
     public void update() {
         for(MenuButton mb: buttons){
@@ -57,6 +60,10 @@ public class Menu extends State implements Statemethods{
         }
     }
 
+    /**
+     * dibuja el botón de menú
+     * @param g
+     */
     @Override
     public void draw(Graphics g) {
 
@@ -74,6 +81,10 @@ public class Menu extends State implements Statemethods{
 
     }
 
+    /**
+     * lo que hace cuando el ratón está pulsando el botón
+     * @param e variable del evento del ratón
+     */
     @Override
     public void mousePressed(MouseEvent e) {
         for(MenuButton mb: buttons){
@@ -84,6 +95,10 @@ public class Menu extends State implements Statemethods{
         }
     }
 
+    /**
+     * lo que hace cuando el ratón ha dejado de pulsar el botón
+     * @param e variable del evento del ratón
+     */
     @Override
     public void mouseReleased(MouseEvent e) {
         for(MenuButton mb: buttons){
@@ -97,12 +112,19 @@ public class Menu extends State implements Statemethods{
         resetButtons();
     }
 
+    /**
+     * reinicia el botón
+     */
     private void resetButtons(){
         for(MenuButton mb : buttons){
             mb.resetBools();
         }
     }
 
+    /**
+     * cuando el ratón se mueve estando en el botón
+     * @param e variable del evento del ratón
+     */
     @Override
     public void mouseMoved(MouseEvent e) {
         for(MenuButton mb : buttons){
@@ -117,6 +139,10 @@ public class Menu extends State implements Statemethods{
         }
     }
 
+    /**
+     * Cuando pulsa el teclado ENTER
+     * @param e variable del evento del ratón
+     */
     @Override
     public void keyPressed(KeyEvent e) {
         if(e.getKeyCode() == KeyEvent.VK_ENTER){
