@@ -87,6 +87,9 @@ public class Playing extends State implements Statemethods{
         maxLvlOffsetX = levelManager.getCurrentLevel().getLvlOffset();
     }
 
+    /**
+     * inicializar clases
+     */
     public void initClasses(){
         levelManager= new LevelManager(game);
         enemyManager = new EnemyManager(this);

@@ -27,6 +27,10 @@ public class PauseOverlay {
     private UrmButton menuB, replayB, unpausedB;
     private VolumeButton volumeButton;
 
+    /**
+     * constructor
+     * @param playing estado de jugar en el juego
+     */
     public PauseOverlay(Playing playing){
         this.playing = playing;
         loadBackground();
@@ -35,12 +39,18 @@ public class PauseOverlay {
         createVolumeButton();
     }
 
+    /**
+     * método para crear el botón de volumen
+     */
     private void createVolumeButton(){
         int vX = (int)(309 * Game.SCALE);
         int vY = (int)(278 * Game.SCALE);
         volumeButton = new VolumeButton(vX, vY, SLIDER_WIDTH, VOLUME_HEIGHT);
     }
 
+    /**
+     * crear botones de unpause, replay y menu
+     */
     private void createUrmButtons(){
         int menuX = (int)(313 * Game.SCALE);
         int replayX = (int)(387 * Game.SCALE);
@@ -52,6 +62,9 @@ public class PauseOverlay {
         unpausedB = new UrmButton(unpausedX, bY, URM_SIZE, URM_SIZE, 0);
     }
 
+    /**
+     * crear botones de sonido
+     */
     private void createSoundButtons(){
         int soundX = (int)(450 * Game.SCALE);
         int musicY = (int)(140 * Game.SCALE);
@@ -60,6 +73,9 @@ public class PauseOverlay {
         sfxButton = new SoundButton(soundX,sfxY,SOUND_SIZE,SOUND_SIZE);
     }
 
+    /**
+     * cargar el fondo
+     */
     private void loadBackground(){
         backgroundImg = LoadSave.getSpriteAtlas(LoadSave.PAUSE_BACKGROUND);
         bgW = (int)(backgroundImg.getWidth() * Game.SCALE);
@@ -68,6 +84,9 @@ public class PauseOverlay {
         bgY = (int) (25* Game.SCALE);
     }
 
+    /**
+     * actualizar los botones de la pantalla de pausa
+     */
     public void update(){
         musicButton.update();
         sfxButton.update();
@@ -78,6 +97,10 @@ public class PauseOverlay {
         volumeButton.update();
     }
 
+    /**
+     * dibujar los botones de la pantalla de pausa
+     * @param g clase de java swing
+     */
     public void draw(Graphics g){
         //Background
         g.drawImage(backgroundImg, bgX, bgY, bgW, bgH, null);
@@ -174,6 +197,12 @@ public class PauseOverlay {
         }
     }
 
+    /**
+     * método booleano para saber si está dentro
+     * @param e el evento del ratón
+     * @param b el botón
+     * @return devuelve true si está en el botón
+     */
     private boolean isIn(MouseEvent e, PauseButton b){
         return b.getBounds().contains(e.getX(), e.getY());
     }

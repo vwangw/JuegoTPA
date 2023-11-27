@@ -56,6 +56,10 @@ public class VolumeButton extends PauseButton{
         g.drawImage(imgs[index], buttonX - VOLUME_WIDTH / 2, y, VOLUME_WIDTH, height, null);
     }
 
+    /**
+     * cambiar la posición x del slider y que no salga de la línea
+     * @param x posición actual
+     */
     public void changeX(int x){
         if(x < minX){
             buttonX = minX;
