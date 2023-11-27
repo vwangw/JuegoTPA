@@ -11,6 +11,9 @@ import java.awt.image.BufferedImage;
 
 import static utilz.Constants.UI.UrmButtons.URM_SIZE;
 
+/**
+ * clase para cuando completas un nivel
+ */
 public class LevelCompletedOverlay {
 
     private Playing playing;

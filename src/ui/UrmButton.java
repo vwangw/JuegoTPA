@@ -7,6 +7,9 @@ import java.awt.image.BufferedImage;
 
 import static utilz.Constants.UI.UrmButtons.*;
 
+/**
+ * imagen de los botones de menu, pausa y reiniciar
+ */
 public class UrmButton extends PauseButton{
 
     private BufferedImage[] imgs;

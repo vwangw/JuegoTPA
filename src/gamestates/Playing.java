@@ -18,6 +18,9 @@ import java.util.Random;
 
 import static utilz.Constants.Environment.*;
 
+/**
+ * clase para cuando se esté jugando
+ */
 public class Playing extends State implements Statemethods{
     private Player player;
     private LevelManager levelManager;
@@ -102,6 +105,9 @@ public class Playing extends State implements Statemethods{
 
     }
 
+    /**
+     * método para saber si está lo suficientemente cerca de los bordes para mover la pantalla
+     */
     private void checkClosedToBorder(){
         int playerX = (int)player.getHitbox().x;
         int diff = playerX - xLvlOffset;
@@ -264,6 +270,9 @@ public class Playing extends State implements Statemethods{
             }
     }
 
+    /**
+     * quitar la pausa
+     */
     public void unpauseGame(){
         paused = false;
     }

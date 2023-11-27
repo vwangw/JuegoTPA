@@ -4,12 +4,18 @@ import main.Game;
 
 import java.awt.geom.Rectangle2D;
 
+/**
+ * clase abstracta para todos los personajes
+ */
 public abstract class Entity {
 
     protected float x,y;
     protected int width, height;
     protected Rectangle2D.Float hitbox;
     protected int aniTick, aniIndex;
+    /**
+     * estado de los personajes
+     */
     protected int state;
     protected float airSpeed;
     protected boolean inAir = false;
@@ -25,18 +31,28 @@ public abstract class Entity {
         this.height=height;
     }
 
+    /**
+     * inicializar los hitbox
+     */
     protected void initHitbox(float width, float height){
         hitbox=new Rectangle2D.Float(x,y,(int)(width * Game.SCALE),(int)(height * Game.SCALE));
     }
 
+    /**
+     * getter de hitbox
+     */
     public Rectangle2D.Float getHitbox(){
         return hitbox;
     }
-
+    /**
+     * getter de estados
+     */
     public int getState(){
         return state;
     }
-
+    /**
+     * getter de indice de la animacion
+     */
     public int getAniIndex(){
         return aniIndex;
     }

@@ -2,6 +2,9 @@ package utilz;
 
 import main.Game;
 
+/**
+ * valores constantes dentro del juego
+ */
 public class Constants {
 
     public static final float GRAVITY = 0.04f * Game.SCALE;

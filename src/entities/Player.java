@@ -13,6 +13,9 @@ import static utilz.Constants.GRAVITY;
 import static utilz.Constants.PlayerConstants.*;
 import static utilz.HelpMethods.*;
 
+/**
+ * clase del jugador
+ */
 public class Player extends Entity{
 
     private BufferedImage[][] animations;
@@ -23,11 +26,11 @@ public class Player extends Entity{
     private float xDrawOffset=21* Game.SCALE;
     private float yDrawOffset=4* Game.SCALE;
 
-    // Jumping/Gravity
+    // Gravedad y Saltar
     private float jumpSpeed= -2.25f * Game.SCALE;
     private float fallSpeedAfterCollision=0.5f*Game.SCALE;
 
-    //StatusBarUI
+    //Barra del estado
     private BufferedImage statusBarImg;
 
     private int statusBarWidth = (int)(192 * Game.SCALE);
@@ -61,6 +64,9 @@ public class Player extends Entity{
         initAttackBox();
     }
 
+    /**
+     * Saber donde spawnea el personaje
+     */
     public void setSpawn(Point spawn){
         this.x = spawn.x;
         this.y = spawn.y;
@@ -68,6 +74,9 @@ public class Player extends Entity{
         hitbox.y = y;
     }
 
+    /**
+     * inicializar el hitbox del ataque
+     */
     private void initAttackBox(){
         attackBox = new Rectangle2D.Float(x, y, (int)(20 * Game.SCALE), (int)(20 * Game.SCALE));
     }
@@ -90,6 +99,9 @@ public class Player extends Entity{
         setAnimation();
     }
 
+    /**
+     * si el ataque ha sido realizado
+     */
     private void checkAttack(){
         if(attackChecked || aniIndex != 1){
             return;
@@ -111,18 +123,27 @@ public class Player extends Entity{
         healthWidth = (int)((currentHealth / (float)maxHealth) * healthBarWidth);
     }
 
+    /**
+     * ddibujar
+     */
     public void render(Graphics g, int lvlOffset){
 
         g.drawImage(animations[state][aniIndex],(int)(hitbox.x-xDrawOffset) - lvlOffset + flipX,(int)(hitbox.y-yDrawOffset),width * flipW,height,null);
         drawUI(g);
     }
 
+    /**
+     * dibujar los botones
+     */
     private void drawUI(Graphics g){
         g.drawImage(statusBarImg, statusBarX, statusBarY, statusBarWidth, statusBarHeight, null);
         g.setColor(Color.red);
         g.fillRect(healthBarXStart + statusBarX, healthBarYStart + statusBarY, healthWidth, healthBarHeight);
     }
 
+    /**
+     * metodo de la animacion
+     */
     public void updateAnimationTick(){
         aniTick++;
         if(aniTick >= ANI_SPEED){
@@ -136,6 +157,9 @@ public class Player extends Entity{
         }
     }
 
+    /**
+     * para saber que animaciones usar
+     */
     public void setAnimation(){
 
         int startAni=state;
@@ -169,11 +193,17 @@ public class Player extends Entity{
         }
     }
 
+    /**
+     * volver a empezar la animacion cuando esta cambie
+     */
     public void resetAniTick(){
         aniTick=0;
         aniIndex=0;
     }
 
+    /**
+     * para saber como moverse dependiendo del estado del jugador
+     */
     public void updatePos(){
 
         moving=false;
@@ -228,6 +258,9 @@ public class Player extends Entity{
         moving = true;
     }
 
+    /**
+     * saltar
+     */
     private void jump(){
         if(inAir){
             return;
@@ -236,6 +269,9 @@ public class Player extends Entity{
         airSpeed = jumpSpeed;
     }
 
+    /**
+     * resetear el hecho de que esté en el aire
+     */
     private void resetInAir(){
         inAir = false;
         airSpeed = 0;
@@ -250,6 +286,10 @@ public class Player extends Entity{
         }
     }
 
+    /**
+     * modificar la vida
+     * @param value cantidad que se modifica
+     */
     public void changeHealth(int value){
         currentHealth += value;
 
@@ -261,6 +301,9 @@ public class Player extends Entity{
         }
     }
 
+    /**
+     * cargar animacion
+     */
     public void loadAnimations(){
 
         BufferedImage img = LoadSave.getSpriteAtlas(LoadSave.PLAYER_ATLAS);
@@ -274,6 +317,9 @@ public class Player extends Entity{
         statusBarImg = LoadSave.getSpriteAtlas(LoadSave.STATUS_BAR);
     }
 
+    /**
+     * cargar datos del nivel
+     */
     public void loadLvlData(int[][] lvlData){
         this.lvlData=lvlData;
         if(!isEntityOnFloor(hitbox, lvlData)){
@@ -281,6 +327,9 @@ public class Player extends Entity{
         }
     }
 
+    /**
+     * sirve para movimiento
+     */
     public void resetDirBooleans(){
         left=false;
         right=false;
@@ -302,6 +351,9 @@ public class Player extends Entity{
         this.jump=jump;
     }
 
+    /**
+     * reset entero
+     */
     public void resetAll(){
         resetDirBooleans();
         inAir = false;

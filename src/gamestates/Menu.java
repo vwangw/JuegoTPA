@@ -9,12 +9,18 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 
+/**
+ * clase para cuando está en el menú
+ */
 public class Menu extends State implements Statemethods{
 
     private MenuButton[] buttons = new MenuButton[3];
     private BufferedImage backgroundImg, backgroundImgPink;
     private int menuX, menuY, menuWidth, menuHeight;
 
+    /**
+     *constructor
+     */
     public Menu(Game game) {
         super(game);
         loadButtons();
@@ -22,12 +28,18 @@ public class Menu extends State implements Statemethods{
         backgroundImgPink = LoadSave.getSpriteAtlas(LoadSave.MENU_BACKGROUND_IMG);
     }
 
+    /**
+     * cargar los botones
+     */
     private void loadButtons(){
         buttons[0] = new MenuButton(Game.GAME_WIDTH / 2, (int)(150 * Game.SCALE), 0, Gamestate.PLAYING);
         buttons[1] = new MenuButton(Game.GAME_WIDTH / 2, (int)(220 * Game.SCALE), 1, Gamestate.OPTIONS);
         buttons[2] = new MenuButton(Game.GAME_WIDTH / 2, (int)(290 * Game.SCALE), 2, Gamestate.QUIT);
     }
 
+    /**
+     * cargar el fondo
+     */
     private void loadBackgrounds(){
         backgroundImg = LoadSave.getSpriteAtlas(LoadSave.MENU_BACKGROUND);
         menuWidth = (int)(backgroundImg.getWidth() * Game.SCALE);

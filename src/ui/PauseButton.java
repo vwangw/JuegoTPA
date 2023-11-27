@@ -2,6 +2,9 @@ package ui;
 
 import java.awt.*;
 
+/**
+ * botón para pausar
+ */
 public class PauseButton {
 
     protected int x,y,width,height;

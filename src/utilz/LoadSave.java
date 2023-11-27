@@ -8,6 +8,9 @@ import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.net.URL;
 
+/**
+ * cargar y guardar los archivos
+ */
 public class LoadSave {
 
     public static final String PLAYER_ATLAS = "player_sprites.png";

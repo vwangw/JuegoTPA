@@ -9,6 +9,9 @@ import java.util.ArrayList;
 
 import static utilz.HelpMethods.*;
 
+/**
+ * clase para los niveles
+ */
 public class Level {
 
     private BufferedImage img;
@@ -32,6 +35,9 @@ public class Level {
         playerSpawn = GetPlayerSpawn(img);
     }
 
+    /**
+     * método para mover la cámara
+     */
     private void calculateLvlOffsets(){
         lvlTilesWide = img.getWidth();
         maxTilesOffset = lvlTilesWide - Game.TILES_IN_WIDTH;

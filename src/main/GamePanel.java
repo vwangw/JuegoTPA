@@ -6,6 +6,10 @@ import javax.swing.JPanel;
 import java.awt.*;
 import static main.Game.GAME_WIDTH;
 import static main.Game.GAME_HEIGHT;
+
+/**
+ * el gamepanel
+ */
 public class GamePanel extends JPanel {
 
     private MouseInputs mouseInputs;
@@ -21,12 +25,19 @@ public class GamePanel extends JPanel {
         addMouseMotionListener(mouseInputs);
     }
 
+    /**
+     * tamaño del panel
+     */
     public void setPanelSize(){
         Dimension size=new Dimension(GAME_WIDTH,GAME_HEIGHT);
         setPreferredSize(size);
 
     }
 
+    /**
+     * dibujar en el panel
+     * @param g the <code>Graphics</code> object to protect
+     */
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         game.render(g);

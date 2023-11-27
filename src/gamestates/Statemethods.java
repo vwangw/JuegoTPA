@@ -4,6 +4,9 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
+/**
+ * métodos que siempre tienen que ir juntos
+ */
 public interface Statemethods {
     void update();
 

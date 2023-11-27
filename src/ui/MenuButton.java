@@ -8,6 +8,9 @@ import java.awt.image.BufferedImage;
 
 import static utilz.Constants.UI.Buttons.*;
 
+/**
+ * clase de botón que te lleva al menú
+ */
 public class MenuButton {
     private int xPos, yPos, rowIndex, index;
     private int xOffsetCenter = B_WIDTH / 2;

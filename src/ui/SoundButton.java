@@ -7,6 +7,9 @@ import java.awt.image.BufferedImage;
 
 import static utilz.Constants.UI.PauseButton.*;
 
+/**
+ * botón de sonido
+ */
 public class SoundButton extends PauseButton{
 
     private BufferedImage[][] soundImages;

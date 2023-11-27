@@ -7,6 +7,9 @@ import main.Game;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
+/**
+ * clase de lo que pasa cuando pierdes
+ */
 public class GameOverOverlay {
 
     private Playing playing;
@@ -15,6 +18,9 @@ public class GameOverOverlay {
         this.playing = playing;
     }
 
+    /**
+     * se dibuja para que sea más oscuro la parte de atrás
+     */
     public void draw(Graphics g){
         g.setColor(new Color(0,0,0,200));
         g.fillRect(0,0, Game.GAME_WIDTH, Game.GAME_HEIGHT);

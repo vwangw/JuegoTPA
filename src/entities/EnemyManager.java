@@ -10,21 +10,41 @@ import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
+/**
+ * clase donde están la mayoría de los métodos para los enemigos
+ */
 public class EnemyManager {
-
+    /**
+     * variable que se usa cuando está jugando
+     */
     private Playing playing;
+    /**
+     * lista de la animación del enemigo
+     */
     private BufferedImage[][] crabbyArray;
+    /**
+     * lista de enemigos
+     */
     private ArrayList<Crabby> crabbies = new ArrayList<>();
 
+    /**
+     * constructor de la clase
+     */
     public EnemyManager(Playing playing){
         this.playing = playing;
         loadEnemyImgs();
     }
 
+    /**
+     * método para cargar los enemigos
+     */
     public void loadEnemies(Level level){
         crabbies = level.getCrabs();
     }
 
+    /**
+     * método de actualizar el juego
+     */
     public void update(int[][] lvlData, Player player){
         boolean isAnyActive = false;
         for(Crabby c : crabbies){
@@ -38,10 +58,16 @@ public class EnemyManager {
         }
     }
 
+    /**
+     * método para dibujar el juego
+     */
     public void draw(Graphics g, int xLvlOffset){
         drawCrabs(g, xLvlOffset);
     }
 
+    /**
+     * método para dibujar el enemigo con sus estados
+     */
     private void drawCrabs(Graphics g, int xLvlOffset) {
         for (Crabby c : crabbies) {
             if(c.isActive()){
@@ -50,6 +76,9 @@ public class EnemyManager {
         }
     }
 
+    /**
+     * método para ver si el enemigo fue golpeado
+     */
     public void checkEnemyHit(Rectangle2D.Float attackBox){
         for(Crabby c : crabbies){
             if(c.isActive()){
@@ -61,6 +90,9 @@ public class EnemyManager {
         }
     }
 
+    /**
+     * método para cargar la animación
+     */
     private void loadEnemyImgs(){
         crabbyArray = new BufferedImage[5][9];
         BufferedImage temp = LoadSave.getSpriteAtlas(LoadSave.CRABBY_SPRITE);
@@ -71,6 +103,9 @@ public class EnemyManager {
         }
     }
 
+    /**
+     * resetear los enemigos
+     */
     public void resetAllEnemies(){
         for(Crabby c : crabbies){
            c.resetEnemy();

@@ -8,6 +8,9 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
+/**
+ * clase para manejar los niveles
+ */
 public class LevelManager {
 
     private Game game;
@@ -71,9 +74,5 @@ public class LevelManager {
 
     public Level getCurrentLevel(){
         return levels.get(lvlIndex);
-    }
-
-    public int getAmountOfLevels(){
-        return levels.size();
     }
 }

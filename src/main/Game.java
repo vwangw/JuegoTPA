@@ -7,6 +7,9 @@ import utilz.LoadSave;
 
 import java.awt.*;
 
+/**
+ * clase donde empieza el juego
+ */
 public class Game implements Runnable{
     private GameWindow gameWindow;
     private GamePanel gamePanel;
@@ -78,6 +81,9 @@ public class Game implements Runnable{
         }
     }
 
+    /**
+     * FPS y UPS(update per minute) del juego
+     */
     @Override
     public void run(){
         double timePerFrame=1000000000.0/FPS_SET;

@@ -13,6 +13,9 @@ import static utilz.Constants.UI.PauseButton.*;
 import static utilz.Constants.UI.UrmButtons.*;
 import static utilz.Constants.UI.VolumeButtons.*;
 
+/**
+ * parte visual de cuando se pausa
+ */
 public class PauseOverlay {
 
     private Playing playing;

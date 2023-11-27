@@ -13,6 +13,11 @@ public class State {
         this.game=game;
     }
 
+    /**
+     * método para saber si el ratón está en el botón
+     * @param e el evento del ratón, en este caso si está en el botón
+     * @param mb el botón
+     */
     public boolean isIn(MouseEvent e, MenuButton mb){
         return mb.getBounds().contains(e.getX(), e.getY());
     }

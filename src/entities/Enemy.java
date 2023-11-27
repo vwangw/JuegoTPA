@@ -10,18 +10,51 @@ import static utilz.Constants.GRAVITY;
 import static utilz.HelpMethods.*;
 import static utilz.Constants.Directions.*;
 
+/**
+ * clase abstracta para los enemigos
+ */
 public abstract class Enemy extends Entity{
+    /**
+     * tipo de enemigo
+     */
     protected int enemyType;
-
+    /**
+     * variable para saber si es la primera vez en el juego
+     */
     protected boolean firstUpdate = true;
-
+    /**
+     * velocidad al moverse
+     */
     protected float walkSpeed;
+    /**
+     * dirección donde mira
+     */
     protected int walkDir = LEFT;
+    /**
+     * tamaño de un bloque
+     */
     protected int tileY;
+    /**
+     * rango de ataque
+     */
     protected float attackDistance = Game.TILES_SIZE;
+    /**
+     * si está presente en el juego
+     */
     protected boolean active = true;
+    /**
+     * revisar si el ataque se ha realizado
+     */
     protected boolean attackChecked;
 
+    /**
+     * Constructor de la clase abstracta Enemy
+     * @param x posición x
+     * @param y posición y
+     * @param width tamaño de la anchura
+     * @param height tamaño de la altura
+     * @param enemyType tipo de enemigo
+     */
     public Enemy(float x, float y, int width, int height, int enemyType) {
         super(x, y, width, height);
         this.enemyType = enemyType;
@@ -30,6 +63,10 @@ public abstract class Enemy extends Entity{
         walkSpeed = Game.SCALE * 0.35f;
     }
 
+    /**
+     * Método para saber si es la primera actualización de los enemigos
+     * @param lvlData datos del nivel
+     */
     protected void firstUpdateCheck(int[][] lvlData){
         if(firstUpdate){
             if(!isEntityOnFloor(hitbox, lvlData)){
@@ -39,6 +76,10 @@ public abstract class Enemy extends Entity{
         }
     }
 
+    /**
+     * Método para que pueda caer
+     * @param lvlData datos del nivel
+     */
     protected void updateInAir(int[][] lvlData){
         if(canMoveHere(hitbox.x, hitbox.y + airSpeed, hitbox.width, hitbox.height, lvlData)){
             hitbox.y += airSpeed;
@@ -50,6 +91,10 @@ public abstract class Enemy extends Entity{
         }
     }
 
+    /**
+     * Método para moverse
+     * @param lvlData datos del nivel
+     */
     protected void move(int[][] lvlData){
         float xSpeed;
 
@@ -68,6 +113,11 @@ public abstract class Enemy extends Entity{
         changeWalkDir();
     }
 
+    /**
+     * Método para cuando el enemigo golpea al jugaddor
+     * @param attackBox el hitbox del ataque
+     * @param player el jugador mismo
+     */
     protected void checkPlayerHit(Rectangle2D.Float attackBox, Player player){
         if(attackBox.intersects(player.hitbox)){
             player.changeHealth(-getEnemyDmg(enemyType));
@@ -75,6 +125,9 @@ public abstract class Enemy extends Entity{
         attackChecked = true;
     }
 
+    /**
+     * Método para actualizar las animaciones del enemigo
+     */
     protected void updateAnimationTick(){
         aniTick++;
         if(aniTick >= ANI_SPEED){
@@ -91,12 +144,20 @@ public abstract class Enemy extends Entity{
         }
     }
 
+    /**
+     * Método para actualizar el enemigo
+     * @param lvlData datos del nivel
+     */
     public void update(int[][] lvlData){
         updateMove(lvlData);
         updateAnimationTick();
 
     }
 
+    /**
+     * Método para que se actualice el movimiento del enemigo
+     * @param lvlData datos del nivel
+     */
     private void updateMove(int[][] lvlData){
         if(firstUpdate){
             if(!isEntityOnFloor(hitbox, lvlData)){
@@ -140,6 +201,10 @@ public abstract class Enemy extends Entity{
         }
     }
 
+    /**
+     * Método para que el enemigo mire al jugador
+     * @param player el jugador mismo
+     */
     protected void turnTowardsPlayer(Player player){
         if(player.hitbox.x > hitbox.x){
             walkDir = RIGHT;
@@ -148,6 +213,12 @@ public abstract class Enemy extends Entity{
         }
     }
 
+    /**
+     * Método para saber si el jugador puede ser visto o no por el enemigo
+     * @param lvlData datos del nivel
+     * @param player el jugador
+     * @return devuelve verdadero o falso dependiendo de la altura y la distancia entre el enemigo y el jugador
+     */
     protected boolean canSeePlayer(int[][] lvlData, Player player){
         int playerTileY = (int)(player.getHitbox().y / Game.TILES_SIZE);
         if(playerTileY == tileY){
@@ -158,22 +229,40 @@ public abstract class Enemy extends Entity{
         return false;
     }
 
+    /**
+     * Método para saber si el jugador está en la distancia de detección del enemigo, complementa el método canSeePlayer
+     * @param player el jugador
+     * @return devuelve verdadero si está en la distancia
+     */
     protected boolean isPlayerOnRange(Player player){
         int absValue = (int)Math.abs(player.hitbox.x - hitbox.x);
         return absValue <= attackDistance * 5;
     }
 
+    /**
+     * Nétodo para saber si está en la distancia del ataque
+     * @param player el jugador
+     * @return devuelve verdadero si está en la distancia del ataque
+     */
     protected boolean isPlayerCloseForAttack(Player player){
         int absValue = (int)Math.abs(player.hitbox.x - hitbox.x);
         return absValue <= attackDistance;
     }
 
+    /**
+     * Método para hacer que el enemigo cambie de estado
+     * @param enemyState el estado del enemigo que queremos
+     */
     protected void newState(int enemyState){
         this.state = enemyState;
         aniTick = 0;
         aniIndex = 0;
     }
 
+    /**
+     * Método para cuando el enemigo es golpeado
+     * @param amount cantidad de daño que recibe el enemigo
+     */
     public void hurt(int amount){
         currentHealth -= amount;
         if(currentHealth <= 0){
@@ -183,6 +272,9 @@ public abstract class Enemy extends Entity{
         }
     }
 
+    /**
+     * Método para cambiar dónde camina dependiendo de su dirección original
+     */
     protected void changeWalkDir(){
         if(walkDir == LEFT){
             walkDir = RIGHT;
@@ -191,6 +283,9 @@ public abstract class Enemy extends Entity{
         }
     }
 
+    /**
+     * Método para resetear los enemigos
+     */
     public void resetEnemy(){
         hitbox.x = x;
         hitbox.y = y;
@@ -201,6 +296,9 @@ public abstract class Enemy extends Entity{
         airSpeed = 0;
     }
 
+    /**
+     * Método booleano para saber si el enemigo está activo en el juego
+     */
     public boolean isActive() {
         return active;
     }

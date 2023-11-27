@@ -10,6 +10,9 @@ import java.util.ArrayList;
 
 import static utilz.Constants.EnemyConstants.CRABBY;
 
+/**
+ * métodos que se usan en varias clases, para tenerlos en un mismo lugar
+ */
 public class HelpMethods {
 
     public static boolean canMoveHere(float x, float y, float width, float height,int[][] lvlData){
