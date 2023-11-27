@@ -9,6 +9,8 @@ import java.awt.event.KeyEvent;
 
 /**
  * clase de lo que pasa cuando pierdes
+ * @author Vicente
+ * @version 27/11/2023
  */
 public class GameOverOverlay {
 

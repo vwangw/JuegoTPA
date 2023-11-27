@@ -10,6 +10,8 @@ import static utilz.Constants.UI.Buttons.*;
 
 /**
  * clase de botón que te lleva al menú
+ * @author Vicente
+ * @version 27/11/2023
  */
 public class MenuButton {
     private int xPos, yPos, rowIndex, index;

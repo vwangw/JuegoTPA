@@ -13,6 +13,8 @@ import static utilz.Constants.UI.UrmButtons.URM_SIZE;
 
 /**
  * clase para cuando completas un nivel
+ * @author Vicente
+ * @version 27/11/2023
  */
 public class LevelCompletedOverlay {
 

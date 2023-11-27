@@ -10,6 +10,8 @@ import java.net.URL;
 
 /**
  * cargar y guardar los archivos
+ * @author Vicente
+ * @version 27/11/2023
  */
 public class LoadSave {
 

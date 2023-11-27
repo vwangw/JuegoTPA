@@ -11,6 +11,8 @@ import java.awt.image.BufferedImage;
 
 /**
  * clase para cuando está en el menú
+ * @author Vicente
+ * @version 27/11/2023
  */
 public class Menu extends State implements Statemethods{
 

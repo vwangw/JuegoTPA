@@ -8,6 +8,8 @@ import java.awt.event.KeyListener;
 
 /**
  * clase para los controles de tecla
+ * @author Vicente
+ * @version 27/11/2023
  */
 public class KeyboardInputs implements KeyListener {
     private GamePanel gamePanel;

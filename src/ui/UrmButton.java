@@ -9,6 +9,8 @@ import static utilz.Constants.UI.UrmButtons.*;
 
 /**
  * imagen de los botones de menu, pausa y reiniciar
+ * @author Vicente
+ * @version 27/11/2023
  */
 public class UrmButton extends PauseButton{
 

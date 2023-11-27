@@ -4,6 +4,8 @@ import main.Game;
 
 /**
  * valores constantes dentro del juego
+ * @author Vicente
+ * @version 27/11/2023
  */
 public class Constants {
 

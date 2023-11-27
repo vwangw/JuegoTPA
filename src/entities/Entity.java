@@ -6,6 +6,8 @@ import java.awt.geom.Rectangle2D;
 
 /**
  * clase abstracta para todos los personajes
+ * @author Vicente
+ * @version 27/11/2023
  */
 public abstract class Entity {
 

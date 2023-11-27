@@ -6,6 +6,8 @@ import java.awt.event.MouseEvent;
 
 /**
  * métodos que siempre tienen que ir juntos
+ * @author Vicente
+ * @version 27/11/2023
  */
 public interface Statemethods {
     void update();

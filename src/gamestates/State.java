@@ -5,6 +5,10 @@ import ui.MenuButton;
 
 import java.awt.event.MouseEvent;
 
+/**
+ * @author Vicente
+ * @version 27/11/2023
+ */
 public class State {
 
     protected Game game;

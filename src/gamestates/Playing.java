@@ -20,6 +20,8 @@ import static utilz.Constants.Environment.*;
 
 /**
  * clase para cuando se esté jugando
+ * @author Vicente
+ * @version 27/11/2023
  */
 public class Playing extends State implements Statemethods{
     private Player player;

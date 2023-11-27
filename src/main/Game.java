@@ -9,6 +9,8 @@ import java.awt.*;
 
 /**
  * clase donde empieza el juego
+ * @author Vicente
+ * @version 27/11/2023
  */
 public class Game implements Runnable{
     private GameWindow gameWindow;

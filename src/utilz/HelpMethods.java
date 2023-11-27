@@ -12,6 +12,8 @@ import static utilz.Constants.EnemyConstants.CRABBY;
 
 /**
  * métodos que se usan en varias clases, para tenerlos en un mismo lugar
+ * @author Vicente
+ * @version 27/11/2023
  */
 public class HelpMethods {
 

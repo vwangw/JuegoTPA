@@ -12,6 +12,8 @@ import static utilz.Constants.Directions.*;
 
 /**
  * clase abstracta para los enemigos
+ * @author Vicente
+ * @version 27/11/2023
  */
 public abstract class Enemy extends Entity{
     /**

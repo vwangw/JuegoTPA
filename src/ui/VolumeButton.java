@@ -9,6 +9,8 @@ import static utilz.Constants.UI.VolumeButtons.*;
 
 /**
  * slider del volumen
+ * @author Vicente
+ * @version 27/11/2023
  */
 public class VolumeButton extends PauseButton{
 

@@ -9,6 +9,8 @@ import static main.Game.GAME_HEIGHT;
 
 /**
  * el gamepanel
+ * @author Vicente
+ * @version 27/11/2023
  */
 public class GamePanel extends JPanel {
 

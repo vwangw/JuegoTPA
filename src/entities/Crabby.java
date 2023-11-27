@@ -9,6 +9,8 @@ import static utilz.Constants.EnemyConstants.*;
 
 /**
  * clase para un tipo de enemigo
+ * @author Vicente
+ * @version 27/11/2023
  */
 public class Crabby extends Enemy{
     /**

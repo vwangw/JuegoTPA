@@ -15,6 +15,8 @@ import static utilz.HelpMethods.*;
 
 /**
  * clase del jugador
+ * @author Vicente
+ * @version 27/11/2023
  */
 public class Player extends Entity{
 

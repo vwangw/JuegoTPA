@@ -9,6 +9,8 @@ import static utilz.Constants.UI.PauseButton.*;
 
 /**
  * botón de sonido
+ * @author Vicente
+ * @version 27/11/2023
  */
 public class SoundButton extends PauseButton{
 

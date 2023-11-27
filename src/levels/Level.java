@@ -11,6 +11,8 @@ import static utilz.HelpMethods.*;
 
 /**
  * clase para los niveles
+ * @author Vicente
+ * @version 27/11/2023
  */
 public class Level {
 

@@ -4,6 +4,8 @@ import java.awt.*;
 
 /**
  * botón para pausar
+ * @author Vicente
+ * @version 27/11/2023
  */
 public class PauseButton {
 

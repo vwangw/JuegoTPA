@@ -9,6 +9,8 @@ import java.awt.event.MouseMotionListener;
 
 /**
  * clase para los controles del ratón
+ * @author Vicente
+ * @version 27/11/2023
  */
 public class MouseInputs implements MouseListener, MouseMotionListener {
 

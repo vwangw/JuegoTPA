@@ -6,6 +6,8 @@ import java.awt.event.WindowFocusListener;
 
 /**
  * la ventana del juego
+ * @author Vicente
+ * @version 27/11/2023
  */
 public class GameWindow extends JFrame {
 

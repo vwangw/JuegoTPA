@@ -15,6 +15,8 @@ import static utilz.Constants.UI.VolumeButtons.*;
 
 /**
  * parte visual de cuando se pausa
+ * @author Vicente
+ * @version 27/11/2023
  */
 public class PauseOverlay {
 

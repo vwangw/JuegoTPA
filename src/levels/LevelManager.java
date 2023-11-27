@@ -10,6 +10,8 @@ import java.util.ArrayList;
 
 /**
  * clase para manejar los niveles
+ * @author Vicente
+ * @version 27/11/2023
  */
 public class LevelManager {
 
