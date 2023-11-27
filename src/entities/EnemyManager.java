@@ -31,6 +31,7 @@ public class EnemyManager {
 
     /**
      * constructor de la clase
+     * @param playing estado del juego
      */
     public EnemyManager(Playing playing){
         this.playing = playing;
@@ -46,6 +47,8 @@ public class EnemyManager {
 
     /**
      * método de actualizar el juego
+     * @param lvlData datos del nivel
+     * @param player el jugador
      */
     public void update(int[][] lvlData, Player player){
         boolean isAnyActive = false;

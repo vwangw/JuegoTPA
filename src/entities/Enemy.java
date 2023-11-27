@@ -300,6 +300,7 @@ public abstract class Enemy extends Entity{
 
     /**
      * Método booleano para saber si el enemigo está activo en el juego
+     * @return
      */
     public boolean isActive() {
         return active;

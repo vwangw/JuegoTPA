@@ -67,7 +67,7 @@ public class Player extends Entity{
     }
 
     /**
-     * Saber donde spawnea el personaje
+     * Saber donde aparece el personaje
      */
     public void setSpawn(Point spawn){
         this.x = spawn.x;
@@ -102,7 +102,7 @@ public class Player extends Entity{
     }
 
     /**
-     * si el ataque ha sido realizado
+     * comprobar si el ataque ha sido realizado
      */
     private void checkAttack(){
         if(attackChecked || aniIndex != 1){
@@ -126,7 +126,7 @@ public class Player extends Entity{
     }
 
     /**
-     * ddibujar
+     * dibujar
      */
     public void render(Graphics g, int lvlOffset){
 
@@ -297,14 +297,14 @@ public class Player extends Entity{
 
         if(currentHealth <= 0){
             currentHealth = 0;
-            //gameOver();
+            //fin del juego
         }else if(currentHealth >= maxHealth){
             currentHealth = maxHealth;
         }
     }
 
     /**
-     * cargar animacion
+     * cargar animación
      */
     public void loadAnimations(){
 
